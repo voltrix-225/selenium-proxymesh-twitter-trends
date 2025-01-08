@@ -1,0 +1,5 @@
+PROXY_URL = "http://your-proxymesh-url:port"
+PROXY_CREDENTIALS = "username:password"
+MONGO_URI = "mongodb://localhost:27017/"
+TWITTER_USERNAME = "your_twitter_username"
+TWITTER_PASSWORD = "your_twitter_password"
